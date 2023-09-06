@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>双引号的个人主页</title>
+    <link rel="shortcut icon" type="image/x-icon" href="银狼.ico">
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .canvaszz {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: block;
+            background-image: url(img/21.jpg);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .canvas {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            vertical-align: baseline;
+            z-index: -2;
+        }
+
+        .intro a {
+            color: black;
+        }
+
+        .blank a {
+            color: white;
+        }
+
+        .baground {
+            margin-left: 25%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            border-radius: 25px;
+            width: 50%;
+            background: white no-repeat center scroll;
+            background-size: cover;
+        }
+
+        .topblank {
+            margin-left: 10%;
+            color: white;
+        }
+
+        .bottomblank {
+            margin-left: 10%;
+            color: white;
+        }
+
+        .totaltitle {
+            font-family: Microsoft YaHei;
+            margin-left: 10%;
+            color: black;
+        }
+
+        .intro {
+            font-family: STZhongsong;
+            margin-left: 15%;
+            margin-right: 15%;
+            color: black;
+        }
+
+        .achieve {
+            font-family: STZhongsong;
+            margin-left: 15%;
+            margin-right: 15%;
+            color: black;
+        }
+
+        .plan {
+            font-family: STZhongsong;
+            margin-left: 15%;
+            margin-right: 15%;
+            color: black;
+        }
+
+        .hidden {
+            width: 1000px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+        .blank {
+            margin-left: 10%;
+            color: white;
+        }
+
+        .picture {
+            transition: all 0.2s linear;
+        }
+
+        .picture:hover {
+            transform: scale(2.0);
+            transition: all 0.2s linear;
+        }
+
+        .menu0 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            z-index: -2;
+        }
+        .menu1 {
+            position: absolute;
+            top: 0;
+            left: 150px;
+            background-size: cover;
+            z-index: -2;
+        }
+        .menu2 {
+            position: absolute;
+            top: 0;
+            left: 300px;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        .black {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        .kcalb {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        .loader {
+            position: center;
+            background-color: white;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .scanner span {
+            color: transparent;
+            font-size: 3rem;
+            position: absolute;
+            top: 40%;
+            left: 60%;
+            margin-left: -5em;
+        }
+
+        .scanner span::before {
+            content: "Loading...";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            border-right: 4px solid #6d11a7;
+            overflow: hidden;
+            color: #6d11a7;
+            animation: load91371 3s linear infinite;
+
+        }
+
+        @keyframes load91371 {
+            0%, 10%, 100% {
+                width: 0;
+            }
+
+            10%,20%,30%,40%,50%,60%,70%,80%,90%,100% {
+                border-right-color: transparent;
+            }
+
+            11%,21%,31%,41%,51%,61%,71%,81%,91% {
+                border-right-color: #6d11a7;
+            }
+
+            60%, 80% {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="loader">
+        <div class="scanner">
+            <span>Loading...</span>
+        </div>
+    </div>
+    <div class="canvaszz"> </div>
+    <canvas id="canvas" class="canvas"></canvas>
+    <img class="black" src="image/空黑.png" align="left" />
+    <div class="menu0">
+        <a href="https://syh114514.github.io"><img src="image/首页.png" align="left" width=150 height=90 /></a>
+    </div>
+    <div class="menu1">
+        <img src="image/github.png" align="left" width=150 height=90 />
+    </div>
+    <div class="menu2">
+        <img src="image/csdn.png" align="left" width=150 height=90 />
+    </div>
+    <div class="baground">
+        <div class="topblank">
+            <h2>卧槽，你真来啊</h2>
+        </div>
+        <div class="totaltitle">
+            <h1>自我介绍</h1>
+        </div>
+        <div class="blank">
+            <h3>好好好，全选是吧</h3>
+        </div>
+        <div class="intro">
+            <h3>个人简介</h3>
+            <div>
+                <img class="picture" src="image/随手乱画.jpg" align="right" width="200" height="200" alt="picture.jpg" />
+                <p>姓名：商苡恒</p>
+            </div>
+            <p>性别：♂</p>
+            <p>出生年份：2003</p>
+            <p>班级：2021级计算机类05班</p>
+            <p>
+                技能：十四年游泳
+                <br />&emsp;&emsp;&emsp;八年美术
+                <br />&emsp;&emsp;&emsp;打油诗（就凭这个,在组原实验评估时，
+                <br />&emsp;&emsp;&emsp;柯逍sensei给我们这组的成果评了个A）
+            </p>
+            <p>
+                爱好：随手乱画
+                <br />&emsp;&emsp;&emsp;<b>溪里</b>游泳
+                <br />&emsp;&emsp;&emsp;整<s>烂</s>活
+                <br />&emsp;&emsp;&emsp;<s><a href="https://sr.mihoyo.com/">星穹铁道，启动！</a></s>
+            </p>
+        </div>
+        <div class="blank">
+            <h3>有本事就把下面这个链接点了：</h3>
+        </div>
+        <div class="achieve">
+            <h3>地球Online：IT</h3>
+            <h4>已学习的魔法</h4>
+            <p>
+                数据结构与算法
+                <br />计算机组成原理
+                <br />计算机网络
+            </p>
+            <h4>正在学习的魔法</h4>
+            <p>
+                计算机操作系统
+                <br />数据库系统原理
+                <br /><b>软件相关</b>
+            </p>
+            <h4>已点亮的技能点</h4>
+            <p>
+                C
+                <br />C++
+                <br />Python
+                <br />HTML
+                <br />CSS3
+            </p>
+            <h4>技能树进阶点</h4>
+            <p>
+                <h5>Python</h5>
+                &emsp;Turtle绘图
+                <img class="picture" src="image/原石.png" align="right" width="200" height="217" alt="primogems.png" />
+                <br />&emsp;cygame简易游戏开发
+            </p>
+            <h4>战利品</h4>
+            <p>第二十四届全国青少年信息学奥林匹克联赛<br />漳州赛区竞赛高中组三等奖</p>
+            <p>CSP-S非专业及软件能力认证第一轮贰等</p>
+            <h4>转职方向</h4>
+            <p>软剑士·前端</p>
+            <h4>未点亮的技能点</h4>
+            <p>
+                Java
+                <br />Unity
+                <br />MySQL
+                <br /><a>......</a>
+            </p>
+            <h4>未通关副本</h4>
+            <p>
+                福州大学程序设计竞赛
+                <img class="picture" src="image/二维码.png" align="right" width="200" height="200" alt="primogems.png" />
+                <br />福州大学本科生数学建模竞赛
+                <br />蓝桥杯全国软件和信息技术专业人才大赛
+                <br />......
+            </p>
+            <h6>扫描右方二维码查看更多内容</h6>
+        </div>
+        <div class="blank">
+            <h3><a href="https://www.bilibili.com/video/BV1sN411S7nF/?share_source=copy_web&vd_source=a8b44aaa281c2c01b7bb7967da0c7f2d&t=103">❥福❥利❥</a></h3>
+        </div>
+        <div class="plan">
+            <h3>未来规划</h3>
+            <p>大三学年：提高寄点，踏入六级门槛（为考研服务）</p>
+            <p>大四学年：一年半的拼搏，只为上岸（为就业服务）</p>
+            <p>毕业之后：入职IT公司，享受霉好生活</p>
+        </div>
+        <h3><br />&emsp;&emsp;&emsp;网页仍在完善中，敬请期待......</h3>
+        <div class="bottomblank">
+            <h2>建议循环</h2>
+        </div>
+    </div>
+    <div class="btm">
+        <img class="kcalb" src="image/空黑.png" align="left" />
+    </div>
+</body>
+</html>
+<script>
+    document.onreadystatechange = function () {
+        console.log(document.readyState)
+    }
+    // 获取动画的dom
+    let loader = document.querySelector(".loader");
+    // 页面加载完成事件
+    window.onload = function () {
+        // 加载完成，隐藏动画，显示内容
+        loader.style.display = "none";
+    }
+
+    drawStars();
+    //画星空背景
+    function drawStars() {
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            w = canvas.width = window.innerWidth,
+            h = canvas.height = window.innerHeight,
+
+            hue = 217, //色调色彩
+            stars = [], //保存所有星星
+            count = 0,  //用于计算星星
+            maxStars = 1300; //星星数量
+
+        //canvas2是用来创建星星的源图像，即母版，
+        //根据星星自身属性的大小来设置
+        var canvas2 = document.createElement('canvas'),
+            ctx2 = canvas2.getContext('2d');
+        canvas2.width = 100;
+        canvas2.height = 100;
+        //创建径向渐变，从坐标(half，half)半径为0的圆开始，
+        //到坐标为(half,half)半径为half的圆结束
+        var half = canvas2.width / 2,
+            gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+        gradient2.addColorStop(0.025, '#CCC');
+        //hsl是另一种颜色的表示方式，
+        //h->hue,代表色调色彩，0为red，120为green，240为blue
+        //s->saturation，代表饱和度，0%-100%
+        //l->lightness，代表亮度，0%为black，100%位white
+        gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+        gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+        gradient2.addColorStop(1, 'transparent');
+
+        ctx2.fillStyle = gradient2;
+        ctx2.beginPath();
+        ctx2.arc(half, half, half, 0, Math.PI * 2);
+        ctx2.fill();
+
+        // End cache
+        function random(min, max) {
+            if (arguments.length < 2) {
+                max = min;
+                min = 0;
+            }
+
+            if (min > max) {
+                var hold = max;
+                max = min;
+                min = hold;
+            }
+
+            //返回min和max之间的一个随机值
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function maxOrbit(x, y) {
+            var max = Math.max(x, y),
+                diameter = Math.round(Math.sqrt(max * max + max * max));
+            //星星移动范围，值越大范围越小，
+            return diameter / 2;
+        }
+
+        var Star = function () {
+            //星星移动的半径
+            this.orbitRadius = random(maxOrbit(w, h));
+            //星星大小，半径越小，星星也越小，即外面的星星会比较大
+            this.radius = random(60, this.orbitRadius) / 8;
+            //所有星星都是以屏幕的中心为圆心
+            this.orbitX = w / 2;
+            this.orbitY = h / 2;
+            //星星在旋转圆圈位置的角度,每次增加speed值的角度
+            //利用正弦余弦算出真正的x、y位置
+            this.timePassed = random(0, maxStars);
+            //星星移动速度
+            this.speed = random(this.orbitRadius) / 50000;
+            //星星图像的透明度
+            this.alpha = random(2, 10) / 10;
+
+            count++;
+            stars[count] = this;
+        }
+
+        Star.prototype.draw = function () {
+            //星星围绕在以屏幕中心为圆心，半径为orbitRadius的圆旋转
+            var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+                y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+                twinkle = random(10);
+
+            //星星每次移动会有1/10的几率变亮或者变暗
+            if (twinkle === 1 && this.alpha > 0) {
+                //透明度降低，变暗
+                this.alpha -= 0.05;
+            } else if (twinkle === 2 && this.alpha < 1) {
+                //透明度升高，变亮
+                this.alpha += 0.05;
+            }
+
+            ctx.globalAlpha = this.alpha;
+            //使用canvas2作为源图像来创建星星，
+            //位置在x - this.radius / 2, y - this.radius / 2
+            //大小为 this.radius
+            ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+            //没旋转一次，角度就会增加
+            this.timePassed += this.speed;
+        }
+
+        //初始化所有星星
+        for (var i = 0; i < maxStars; i++) {
+            new Star();
+        }
+
+        function animation() {
+            //以新图像覆盖已有图像的方式进行绘制背景颜色
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 0.5; //尾巴
+            ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 2)';
+            ctx.fillRect(0, 0, w, h)
+
+            //源图像和目标图像同时显示，重叠部分叠加颜色效果
+            ctx.globalCompositeOperation = 'lighter';
+            for (var i = 1, l = stars.length; i < l; i++) {
+                stars[i].draw();
+            };
+
+            //调用该方法执行动画，并且在重绘的时候调用指定的函数来更新动画
+            //回调的次数通常是每秒60次
+            window.requestAnimationFrame(animation);
+        }
+
+        animation();
+    }
+</script>
